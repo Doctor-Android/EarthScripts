@@ -1,0 +1,9 @@
+# Sample Debian package list
+nginx
+python3
+mysql-server
+docker.io
+htop
+vim
+firefox
+vlc

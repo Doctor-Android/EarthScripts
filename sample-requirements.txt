@@ -1,0 +1,6 @@
+# Sample Python requirements.txt
+flask==2.0.1
+requests>=2.25.0
+numpy<1.22.0
+pandas
+matplotlib
