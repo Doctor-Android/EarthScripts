@@ -201,7 +201,26 @@ main() {
         print_warning "VLC Media Player is already installed"
     fi
     
-    # 10. Install Linux Mint Software Store
+    # 10. Install LibreOffice Suite
+    print_status "Installing LibreOffice Suite..."
+    if ! command_exists libreoffice; then
+        # Install LibreOffice and all components
+        sudo pacman -S --noconfirm libreoffice-fresh
+        # Install additional language packs (optional)
+        sudo pacman -S --noconfirm libreoffice-fresh-en-US
+        print_success "LibreOffice Suite installed"
+        print_status "LibreOffice components:"
+        print_status "  • Writer (Word processor)"
+        print_status "  • Calc (Spreadsheet)"
+        print_status "  • Impress (Presentations)"
+        print_status "  • Draw (Vector graphics)"
+        print_status "  • Math (Formula editor)"
+        print_status "  • Base (Database)"
+    else
+        print_warning "LibreOffice Suite is already installed"
+    fi
+    
+    # 11. Install Linux Mint Software Store
     print_status "Installing Linux Mint Software Store..."
     if ! command_exists mintinstall; then
         # Install mintinstall from AUR
@@ -226,6 +245,7 @@ main() {
     echo "  • Freetube"
     echo "  • Librewolf"
     echo "  • VLC Media Player"
+    echo "  • LibreOffice Suite"
     echo "  • Linux Mint Software Store"
     echo ""
     echo "Additional notes:"
@@ -235,6 +255,7 @@ main() {
     echo "  • Freetube is a privacy-focused YouTube client"
     echo "  • Librewolf is a privacy-focused Firefox fork"
     echo "  • VLC supports most media formats out of the box"
+    echo "  • LibreOffice Suite provides a user-friendly way to create and edit documents"
     echo "  • Linux Mint Software Store provides a user-friendly way to install applications"
     echo ""
 }
